@@ -1,4 +1,4 @@
--- Neo-tree is a Neovim plugin to browse the file system
+-- File tree (\ to reveal/close). Opens on startup.
 -- https://github.com/nvim-neo-tree/neo-tree.nvim
 
 return {
