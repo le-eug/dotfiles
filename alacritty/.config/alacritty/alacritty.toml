@@ -1,0 +1,28 @@
+font.size = 15
+font.normal.family = "JetBrainsMono Nerd Font"
+# font.normal.family = "Monocraft Nerd Font"
+cursor.style.blinking = "Never"
+
+# i used to need this but now no more lol
+# terminal.shell = { program = "/bin/zsh", args = ["-l"] }
+
+# window.startup_mode = "Windowed"
+# window.dimensions.columns = 140
+# window.dimensions.lines = 50
+# window.position.x = 100
+# window.position.y = 0
+window.startup_mode = "Maximized"
+
+[general]
+import = [
+  "~/.config/alacritty/themes/snazzy.toml"
+]
+
+[colors.primary]
+# background = '#1e1f29' # from ghostty snazzy hehe
+# background = '#000000'
+# background = '#300A24' # default ubuntu color
+
+[colors.normal]
+black = '#000000'
+green = '#00cd00'
