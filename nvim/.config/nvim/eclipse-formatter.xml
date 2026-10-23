@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profiles version="12">
+<profile name="NoCommentFormatting" kind="CodeFormatterProfile">
+
+    <!-- Disable ALL comment formatting -->
+    <setting id="org.eclipse.jdt.core.formatter.comment.format_block_comments" value="false"/>
+    <setting id="org.eclipse.jdt.core.formatter.comment.format_line_comments" value="false"/>
+    <setting id="org.eclipse.jdt.core.formatter.comment.format_javadoc_comments" value="false"/>
+
+    <!-- Prevent wrapping -->
+    <setting id="org.eclipse.jdt.core.formatter.comment.line_length" value="9999"/>
+
+    <!-- (Optional) keep code formatting normal -->
+    <setting id="org.eclipse.jdt.core.formatter.tabulation.char" value="space"/>
+    <setting id="org.eclipse.jdt.core.formatter.tabulation.size" value="4"/>
+
+  </profile>
+</profiles>
