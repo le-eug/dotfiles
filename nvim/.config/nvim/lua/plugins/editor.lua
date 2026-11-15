@@ -4,7 +4,7 @@ return {
   {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
-    opts = {},
+    opts = {}, -- C/C++ /* */ handling lives in lua/config/c_comments.lua
   },
 
   -- Auto-close and rename HTML/JSX tags

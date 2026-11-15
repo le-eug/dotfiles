@@ -9,10 +9,16 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- Don't continue comments when starting a new line from a comment
+-- Don't continue comments when starting a new line from a comment,
+-- except C/C++ /* */ blocks (VS Code style ` * ` continuation; // comments still don't continue)
 vim.api.nvim_create_autocmd('FileType', {
   pattern = '*',
-  callback = function()
-    vim.opt_local.formatoptions:remove { 'r', 'o' }
+  callback = function(args)
+    if args.match == 'c' or args.match == 'cpp' then
+      require('config.c_comments').attach(args.buf)
+      require('config.clang_format').apply(args.buf)
+    else
+      vim.opt_local.formatoptions:remove { 'r', 'o' }
+    end
   end,
 })

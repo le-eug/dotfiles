@@ -13,7 +13,8 @@ set_indent(4, false)
 
 -- Per-filetype overrides
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'c', 'cpp', 'go' },
+  -- pattern = { 'c', 'cpp', 'go' },
+  pattern = { 'go' },
   callback = function()
     set_indent(4, true)
   end,
