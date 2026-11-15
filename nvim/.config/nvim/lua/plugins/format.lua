@@ -3,6 +3,25 @@ return {
   'stevearc/conform.nvim',
   event = { 'BufWritePre' },
   cmd = { 'ConformInfo' },
+  init = function()
+    -- gq: use conform if this filetype has a formatter, else LSP range
+    -- formatting, else Vim's normal text wrapping. (Without this, Go's
+    -- built-in formatprg pipes only the selected lines to gofmt, which
+    -- fails on partial code.) gw always does plain text wrapping.
+    function _G.smart_formatexpr()
+      local conform = require 'conform'
+      if #conform.list_formatters_to_run(0) > 0 then
+        return conform.formatexpr()
+      end
+      for _, client in ipairs(vim.lsp.get_clients { bufnr = 0 }) do
+        if client:supports_method 'textDocument/rangeFormatting' then
+          return vim.lsp.formatexpr()
+        end
+      end
+      return 1
+    end
+    vim.o.formatexpr = 'v:lua.smart_formatexpr()'
+  end,
   keys = {
     {
       '<leader>f',
