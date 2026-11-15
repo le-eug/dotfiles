@@ -30,7 +30,7 @@ return {
     version = '*',
     opts = {
       autocmds = {
-        enableOnVimEnter = false,
+        enableOnVimEnter = true,
       },
       buffers = {
         right = { enabled = false },

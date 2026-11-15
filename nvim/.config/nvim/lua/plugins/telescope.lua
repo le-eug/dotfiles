@@ -21,6 +21,11 @@ return {
           hidden = true,
           no_ignore = true,
         },
+        -- Show long diagnostic messages in full instead of cutting them off
+        diagnostics = {
+          wrap_results = true,
+          line_width = 'full',
+        },
       },
       extensions = {
         ['ui-select'] = {
